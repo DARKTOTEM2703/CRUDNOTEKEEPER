@@ -9,15 +9,5 @@ class Note extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'titulo',
-        'autor',
-        'descripcion',
-        'fecha',
-    ];
-
-    // Si la fecha está en otro formato al guardar o mostrar
-    protected $casts = [
-        'fecha' => 'datetime', // Para asegurarse de que se trate como fecha
-    ];
+    protected $fillable = ['titulo', 'autor', 'descripcion', 'fecha'];
 }

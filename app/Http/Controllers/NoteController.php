@@ -7,59 +7,59 @@ use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
+    // Mostrar todas las notas (API)
     public function index()
     {
-        $notes = Note::all();
-        return view('notes.index', compact('notes'));
+        return response()->json(Note::all());  // Devolver todas las notas en formato JSON
     }
 
-    public function create()
-    {
-        return view('notes.create');
-    }
-
+    // Crear una nueva nota (API)
     public function store(Request $request)
     {
         $request->validate([
             'titulo' => 'required',
             'autor' => 'required',
             'descripcion' => 'required',
-            'fecha' => 'required',
+            'fecha' => 'required|date',
         ]);
 
-        Note::create($request->all());
+        $note = Note::create($request->all());  // Crear la nueva nota
 
-        return redirect()->route('notes.index')->with('success', 'Nota creada correctamente.');
+        return response()->json($note, 201);  // Devolver la nota creada
     }
 
+    // Mostrar una nota específica (API)
     public function show(Note $note)
     {
-        return view('notes.show', compact('note'));
+        return response()->json($note);  // Devolver la nota solicitada en formato JSON
     }
 
+    // Editar una nota (API)
     public function edit(Note $note)
     {
-        return view('notes.edit', compact('note'));
+        return response()->json($note);  // Devolver la nota para editar
     }
 
+    // Actualizar una nota (API)
     public function update(Request $request, Note $note)
     {
         $request->validate([
             'titulo' => 'required',
             'autor' => 'required',
             'descripcion' => 'required',
-            'fecha' => 'required',
+            'fecha' => 'required|date',
         ]);
 
-        $note->update($request->all());
+        $note->update($request->all());  // Actualizar la nota
 
-        return redirect()->route('notes.index')->with('success', 'Nota actualizada correctamente.');
+        return response()->json($note);  // Devolver la nota actualizada
     }
 
+    // Eliminar una nota (API)
     public function destroy(Note $note)
     {
-        $note->delete();
+        $note->delete();  // Eliminar la nota
 
-        return redirect()->route('notes.index')->with('success', 'Nota eliminada correctamente.');
+        return response()->json(['message' => 'Nota eliminada correctamente']);
     }
 }
