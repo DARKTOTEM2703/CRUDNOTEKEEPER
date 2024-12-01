@@ -18,7 +18,7 @@ class PostController extends Controller
     {
         $posts = Post::paginate();
 
-        return view('post.index', compact('posts'))
+        return view('post.index', compact(var_name: 'posts'))
             ->with('i', ($request->input('page', 1) - 1) * $posts->perPage());
     }
 
