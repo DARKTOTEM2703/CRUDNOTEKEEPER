@@ -18,13 +18,17 @@
 </head>
 <body>
     <div id="app">
-        <nav class="shadow-sm navbar navbar-expand-md navbar-dark bg-primary">
+        <nav class="shadow-sm navbar navbar-expand-md navbar-dark bg-primary fw-bold">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    RUSSDEWE
+                    INICIO
                 </a>
                 <a class="navbar-brand" href="{{ url('/posts') }}">
-                    AWADERUSS
+                    NOTAS
+                </a>
+
+                <a class="navbar-brand" href="{{ url('/posts/datatables') }}">
+                    DATATABLES
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,13 +46,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesion') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                                 </li>
                             @endif
                         @else
@@ -61,7 +65,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar sesión') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

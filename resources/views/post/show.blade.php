@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Post</span>
+                            <span class="card-title"><strong>{{ $post->titulo }} {{ $post->fecha }}</strong></span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm" href="{{ route('posts.index') }}"> {{ __('Back') }}</a>
@@ -20,22 +20,17 @@
 
                     <div class="card-body">
 
+
+
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Titulo:</strong>
-                                    {{ $post->titulo }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Autor:</strong>
-                                    {{ $post->autor }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
-                                    <strong>Descripcion:</strong>
+                                    <strong></strong>
                                     {{ $post->descripcion }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Fecha:</strong>
-                                    {{ $post->fecha }}
+                                    <strong>Hecho por:</strong>
+                                    {{ $post->autor }}
                                 </div>
+
 
                     </div>
                 </div>

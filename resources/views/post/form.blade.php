@@ -17,10 +17,10 @@
             {!! $errors->first('descripcion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="fecha" class="form-label">{{ __('Fecha') }}</label>
-            <input type="text" name="fecha" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha', $post?->fecha) }}" id="fecha" placeholder="Fecha">
-            {!! $errors->first('fecha', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
+    <label for="fecha" class="form-label">{{ __('Fecha') }}</label>
+    <input type="date" name="fecha" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha', $post?->fecha) }}" id="fecha" placeholder="Fecha">
+    {!! $errors->first('fecha', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+</div>
 
     </div>
     <div class="col-md-12 mt20 mt-2">
