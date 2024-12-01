@@ -16,7 +16,7 @@
                             </span>
 
                             <div class="float-right">
-                                <a href="{{ route('posts.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                                <a href="{{ route('posts.create') }}" class="float-right btn btn-primary btn-sm" data-placement="left">
                                     {{ __('Crear nota') }}
                                 </a>
                             </div>
@@ -24,7 +24,7 @@
                     </div>
 
                     @if ($message = Session::get('success'))
-                        <div class="alert alert-success m-4">
+                        <div class="m-4 alert alert-success">
                             <p>{{ $message }}</p>
                         </div>
                     @endif
