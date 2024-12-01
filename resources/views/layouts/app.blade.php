@@ -15,6 +15,11 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <!-- DataTables CDN -->
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 </head>
 <body>
     <div id="app">
@@ -27,9 +32,6 @@
                     NOTAS
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/posts/datatables') }}">
-                    DATATABLES
-                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

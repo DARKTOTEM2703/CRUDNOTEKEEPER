@@ -71,7 +71,7 @@ class PostController extends Controller
         $post->update($request->validated());
 
         return Redirect::route('posts.index')
-            ->with('success', 'Añadido correctamente.');
+            ->with('success', 'Actualizado correctamente.');
     }
 
     public function destroy($id): RedirectResponse
@@ -79,6 +79,6 @@ class PostController extends Controller
         Post::find($id)->delete();
 
         return Redirect::route('posts.index')
-            ->with('success', 'Añadido correctamente.');
+            ->with('success', 'Eliminado correctamente.');
     }
 }
